@@ -5,14 +5,14 @@
     import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
     import { Button } from '@/components/ui/button';
     import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-    import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger, navigationMenuTriggerStyle } from '@/components/ui/menubar';
+    import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from '@/components/ui/menubar';
     import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
     import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
     import UserMenuContent from '@/components/UserMenuContent.svelte';
     import { getInitials } from '@/hooks/useInitials';
     import type { BreadcrumbItem } from '@/types';
     import { Link, page } from '@inertiajs/svelte';
-    import { BookOpen, Folder, LayoutGrid, Menu, Search } from 'lucide-svelte';
+    import { BookOpen, Folder, LayoutGrid, Menu, Search, Upload, FileText, Bell } from 'lucide-svelte';
 
     interface NavItem {
         title: string;
@@ -38,6 +38,21 @@
             href: '/dashboard',
             icon: LayoutGrid,
         },
+        {
+            title: 'UploadDocument',
+            href: '/upload-document',
+            icon: Upload,
+        },
+        {
+            title: 'All Contracts',
+            href: '/contracts',
+            icon: FileText,
+        },
+        {
+            title: 'Reminders',
+            href: '/reminders',
+            icon: Bell,
+        }
     ];
 
     const rightNavItems: NavItem[] = [
@@ -111,7 +126,7 @@
                         <MenubarMenu>
                             <MenubarTrigger
                                 value={item.href}
-                                class="{navigationMenuTriggerStyle()} {activeItemStyles(
+                                class="{activeItemStyles(
                                     item.href,
                                 )} relative flex h-full cursor-pointer items-center px-4 text-sm font-medium"
                             >

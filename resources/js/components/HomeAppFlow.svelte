@@ -1,6 +1,5 @@
 <script lang="ts">
     import Icon from "@iconify/svelte";
-    import { endOfYear } from "@internationalized/date";
     const title = 'Simplify Your Contract Management';
 
     const subtitle = 'Stop losing track of important deadlines and contract terms. Clairvoyant gives you complete visibility and control over your legal documents.';
